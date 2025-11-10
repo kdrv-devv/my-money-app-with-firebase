@@ -77,16 +77,16 @@ const Login = () => {
               <button className="btn">Login</button>
               <p>
                 Haven't an Account?
-                <Link to={"/signup"} className="link" href>
+                <Link to={"/signup"} className="link">
                   Signup Here!
                 </Link>
               </p>
-              <a className="link" href></a>
+              <a className="link" ></a>
             </div>
-            <a className="link" href></a>
+            <a className="link"></a>
           </form>
         </div>
-        <a className="link" href></a>
+        <a className="link"></a>
       </div>
     </div>
   );

@@ -7,7 +7,6 @@ import { useSignOut } from "../../hooks/useSignOut";
 const Header = () => {
   const { signOutUser } = useSignOut()
   const {user} = useGlobalContext()
-  console.log(user , "header user")
   return (
     <header className="bg-[#3a53fb]">
       <div className="mycon py-3 flex items-center justify-between">
@@ -19,11 +18,11 @@ const Header = () => {
 
         {user ? (
           <div className="flex items-center gap-3">
-            <p className="text-xs sm:text-xl font-[600] text-white">{user.email}</p>
+            <p className="text-xs sm:text-xl font-[600] text-white">{ user.displayName ? user.displayName:  user.email}</p>
             <div className="avatar h10 sm:h-14 w-10 sm:w-14 rounded-full overflow-hidden object-center">
               <img
                 className="w-full h-full"
-                src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"
+                src={ user.photoURL ? user.photoURL: "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg"}
                 alt=""
               />
             </div>
