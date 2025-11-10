@@ -19,6 +19,7 @@ const Header = () => {
 
         {user ? (
           <div className="flex items-center gap-3">
+            <p className="text-xs sm:text-xl font-[600] text-white">{user.email}</p>
             <div className="avatar h10 sm:h-14 w-10 sm:w-14 rounded-full overflow-hidden object-center">
               <img
                 className="w-full h-full"

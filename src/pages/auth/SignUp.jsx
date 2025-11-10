@@ -8,6 +8,8 @@ import { useState } from "react";
 import { useGlobalContext } from "../../hooks/useGlobalContext";
 // custom hook
 import { useSignUp } from "../../hooks/useSignUp";
+import { useSignInGoogle } from "../../hooks/useSignInWithGoogle";
+import { FcGoogle } from "react-icons/fc";
 
 const SignUp = () => {
   const { signUp } = useSignUp();
@@ -15,11 +17,12 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { user } = useGlobalContext();
+  const { signInWithGoogle } = useSignInGoogle();
 
   if (user) {
     return <Navigate to={"/"} />;
   }
-  
+
   const handleRegister = (e) => {
     e.preventDefault();
     if (!email.trim() || !password.trim() || !name.trim()) {
@@ -78,6 +81,12 @@ const SignUp = () => {
                 className="form_style"
                 type="password"
               />
+            </div>
+            <div className="signin-with-google flex items-center justify-center">
+              <button onClick={signInWithGoogle} className="oauthButton">
+                <FcGoogle className="text-3xl" />
+                Continue with Google
+              </button>
             </div>
             <div className="flex flex-col items-center">
               <button className="btn">SIGN UP</button>
